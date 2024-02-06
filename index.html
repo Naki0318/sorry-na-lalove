@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sino ka?</title>
+  <style>
+    body{
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, rgba(#e0c3ad,#b18b6f,#d8b79e,.1), rgba(255,255,255,0));
+        background-color: #F4BF96;
+    }
+    
+    .box{
+        margin-top: 25vh;
+        width: 80%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .totoo {
+        align-items: center;
+        background-color: #fee6e3;
+        border: 2px solid #111;
+        border-radius: 8px;
+        box-sizing: border-box;
+        color: #111;
+        cursor: pointer;
+        font-family: Inter,sans-serif;
+        font-size: 16px;
+        height: 6vh;
+        justify-content: center;
+        line-height: 24px;
+        max-width: 100%;
+        padding: 0 25px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        margin-bottom: 10vh;
+    }
+
+    .totoo:after {
+        background-color: #111;
+        border-radius: 8px;
+        content: "";
+        display: block;
+        height: 48px;
+        left: 0;
+        width: 100%;
+        position: absolute;
+        top: -2px;
+        transform: translate(8px, 8px);
+        transition: transform .2s ease-out;
+        z-index: -1;
+    }
+
+    .totoo:hover:after {
+        transform: translate(0, 0);
+    }
+
+    .totoo:active {
+        background-color: #ffdeda;
+        outline: 0;
+    }
+
+    .totoo:hover {
+        outline: 0;
+    }
+
+    .InputContainer {
+        margin-bottom: 2vh;
+        }
+
+    .input {
+        width: 200px;
+        height: 4vh;
+        border: none;
+        outline: none;
+        caret-color: rgb(255, 81, 0);
+        background-color: rgb(255, 255, 255);
+        border-radius: 30px;
+        padding-left: 15px;
+        letter-spacing: 0.8px;
+        color: rgb(19, 19, 19);
+        font-size: 13.4px;
+    }
+    .invalid{
+        font-size: 5vh;
+    }
+
+
+
+    @media (min-width: 768px) {
+    .totoo {
+        padding: 0 40px;
+    }
+    }
+  </style>
+</head>
+<body>
+    <div class="box">
+        <h1 style="color: black; text-align: center;">SINO KA MUNA?</h1>
+        <div class="InputContainer">
+            <input placeholder="Hint: Tawag ko sayo" class="input" name="text" type="text" id="nameInput">
+          </div>
+        <button class="totoo" onclick="verifyName()">ENTER</button>
+        <div id="result"></div>
+        </div>
+
+
+    <script>
+         const validNames = ['lalove','baby','naki', 'jam', 'jamille', 'jamille paz', 'jamille m. paz','jamille paz'].map(name => name.toLowerCase());
+
+        function verifyName() {
+        const enteredName = document.getElementById('nameInput').value.trim().toLowerCase();
+        
+        if (validNames.includes(enteredName)) {
+            window.location.href = 'sorry.html';
+            var inputElement = document.getElementById('nameInput');
+      
+            inputElement.value = '';
+        } else {
+            document.getElementById('result').innerHTML = '<span class="invalid">&nbsp ETO KA OH. \n 🖕🖕🖕</span>';
+            var inputElement = document.getElementById('nameInput');
+      
+            inputElement.value = '';
+        }
+        }
+    </script>
+    
+
+    
+
+    
+</body>
+</html>
